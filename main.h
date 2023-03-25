@@ -8,9 +8,11 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
+int print_num(int n);
 int print_char(va_list h);
 int print_str(va_list h);
 int print_int(va_list h);
+int print_bin(va_list h);
 
 /**
  * struct check - Holds a character and matching function call
