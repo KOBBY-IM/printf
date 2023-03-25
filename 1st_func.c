@@ -60,7 +60,7 @@ int print_str(va_list h)
 int print_int(va_list h)
 {
 	int num = va_arg(h, int), count = 0;
-	int r = 1
+	int r = 1;
 
 
 	if (num < 0)
@@ -69,7 +69,7 @@ int print_int(va_list h)
 		num *= -1;
 	}
 
-	while ((num / r) >= 0)
+	while ((num / r) >= 10)
 		r *= 10;
 	while (r > 0)
 	{
