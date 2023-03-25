@@ -11,11 +11,11 @@ int _printf(const char *format, ...)
 	va_list head;
 	int i = 0, counter = 0, n = 4, j;
 	fmt spec[] = {{'c', print_char}, {'s', print_str}, {'i', print_int},
-	{'d', print_int}};
+	{'d', print_int}, {'b', print_bin}};
 
 	va_start(head, format);
 	if (format == NULL)
-		exit(-1);
+		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 				}
 				else if (j == (n - 1))
 				{
-					exit(-2);
+					counter += _putchar(format[i++]);
 				}
 			}
 			continue;
