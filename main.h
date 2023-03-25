@@ -12,22 +12,16 @@ int print_char(va_list h);
 int print_str(va_list h);
 int print_int(va_list h);
 
-
-
-
 /**
  * struct check - Holds a character and matching function call
  * @c: character element
  * @f: pointer to fucntion call
  *
  */
-
 typedef struct check
 {
 	char c;
 	int (*f)(va_list);
 } fmt;
-
-
 
 #endif
