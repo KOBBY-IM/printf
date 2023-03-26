@@ -5,7 +5,7 @@
  * in binary
  * @h: va_list argument with value needed
  *
- * Return the number of chracter interger in binary printed to stdout
+ * Return: the number of chracter interger in binary printed to stdout
  */
 int print_bin(va_list h)
 {

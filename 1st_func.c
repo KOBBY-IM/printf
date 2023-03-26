@@ -48,8 +48,10 @@ int print_str(va_list h)
 }
 
 /**
- * print_number - Prints an integar number
+ * print_num - Prints an integar number
  * @n: Integar number to be printed
+ *
+ * Return: Number integer characters printed to stdout
  */
 int print_num(int n)
 {
