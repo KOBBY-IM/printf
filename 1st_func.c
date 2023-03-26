@@ -53,9 +53,9 @@ int print_str(va_list h)
  *
  * Return: Number integer characters printed to stdout
  */
-int print_num(int n)
+int print_num(long int n)
 {
-	int num = n, count = 0;
+	long int num = n, count = 0;
 
 	if (num < 0)
 	{
@@ -77,7 +77,8 @@ int print_num(int n)
  */
 int print_int(va_list h)
 {
-	int num = va_arg(h, int), total;
+	long int num = (long int)va_arg(h, int);
+	int total;
 
 	total = print_num(num);
 	return (total);

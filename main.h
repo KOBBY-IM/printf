@@ -8,11 +8,20 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int print_num(int n);
+int print_num(long int n);
 int print_char(va_list h);
 int print_str(va_list h);
 int print_int(va_list h);
 int print_bin(va_list h);
+int print_unsign(va_list h);
+int print_octal(va_list h);
+int print_hexa(va_list h);
+int print_heXa(va_list h);
+
+/**
+ * uil - typedef for unsigned long int
+ */
+typedef unsigned long int uil;
 
 /**
  * struct check - Holds a character and matching function call

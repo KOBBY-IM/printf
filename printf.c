@@ -9,9 +9,10 @@
 int _printf(const char *format, ...)
 {
 	va_list head;
-	int i = 0, counter = 0, n = 5, j;
+	int i = 0, counter = 0, n = 9, j;
 	fmt spec[] = {{'c', print_char}, {'s', print_str}, {'i', print_int},
-	{'d', print_int}, {'b', print_bin}};
+	{'d', print_int}, {'b', print_bin}, {'u', print_unsign}, {'o', print_octal},
+	{'x', print_hexa}, {'X', print_heXa}};
 
 	va_start(head, format);
 	if (format == NULL)
