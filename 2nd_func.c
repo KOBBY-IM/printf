@@ -9,8 +9,8 @@
  */
 int print_bin(va_list h)
 {
-	int num = va_arg(h, int);
-	int div = 1, bin = 0, total;
+	unsigned int num = va_arg(h, unsigned int);
+	unsigned int div = 1, bin = 0, total;
 
 	while (num > 0)
 	{
@@ -19,6 +19,6 @@ int print_bin(va_list h)
 		num /= 2;
 	}
 
-	total = print_num(bin);
+	total = print_num((int)bin);
 	return (total);
 }
