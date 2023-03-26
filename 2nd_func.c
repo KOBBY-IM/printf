@@ -47,7 +47,7 @@ int print_unsign(va_list h)
 int print_octal(va_list h)
 {
 	unsigned int num = va_arg(h, unsigned int);
-	int total, oct[32], i = 0;
+	int total = 0, oct[32], i = 0;
 
 	while (num > 0)
 	{
@@ -70,7 +70,7 @@ int print_octal(va_list h)
 int print_heXa(va_list h)
 {
 	unsigned int num = va_arg(h, unsigned int);
-	int total, heX[32], i = 0;
+	int total = 0, heX[32], i = 0;
 
 	while (num > 0)
 	{
@@ -97,7 +97,7 @@ int print_heXa(va_list h)
 int print_hexa(va_list h)
 {
 	unsigned int num = va_arg(h, unsigned int);
-	int total, hex[32], i = 0;
+	int total = 0, hex[32], i = 0;
 
 	while (num > 0)
 	{
