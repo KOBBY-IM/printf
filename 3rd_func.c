@@ -12,13 +12,17 @@ int print_p(va_list h)
 	unsigned long int num = (unsigned long int)va_arg(h, void *);
 	int total = 0, hex[32], i = 0;
 
-	total += _putchar('0');
-	total += _putchar('x');
 	if (num == 0)
 	{
-		total += _putchar('0');
+		total += _putchar('(');
+		total += _putchar('n');
+		total += _putchar('i');
+		total += _putchar('l');
+		total += _putchar(')');
 			return (total);
 	}
+	total += _putchar('0');
+	total += _putchar('x');
 	while (num > 0)
 	{
 		hex[i] = num % 16;
