@@ -19,6 +19,7 @@ int print_hexa(va_list h);
 int print_heXa(va_list h);
 int print_p(va_list h);
 int print_S(va_list h);
+int print_rev(va_list h);
 
 /**
  * uil - typedef for unsigned long int
