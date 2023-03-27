@@ -54,6 +54,12 @@ int print_octal(va_list h)
 	unsigned int num = va_arg(h, unsigned int);
 	int total = 0, oct[32], i = 0;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	while (num > 0)
 	{
 		oct[i] = num % 8;
@@ -76,6 +82,12 @@ int print_heXa(va_list h)
 {
 	unsigned int num = va_arg(h, unsigned int);
 	int total = 0, heX[12], i = 0;
+
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 
 	while (num > 0)
 	{
@@ -103,6 +115,12 @@ int print_hexa(va_list h)
 {
 	unsigned int num = va_arg(h, unsigned int);
 	int total = 0, hex[12], i = 0;
+
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 
 	while (num > 0)
 	{
