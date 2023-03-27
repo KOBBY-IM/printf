@@ -161,6 +161,8 @@ int print_rot13(va_list h)
 				counter += _putchar(rot[i]);
 				break;
 			}
+			else if (i == 51)
+				counter += _putchar(*ptr);
 		}
 		ptr++;
 	}
