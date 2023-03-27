@@ -46,7 +46,7 @@ int print_S(va_list h)
 		S = "(null)";
 	while (S[pSi])
 	{
-		if ((S[pSi] >= 0 && S[pSi] <= 32) || S[pSi] >= 127)
+		if ((S[pSi] > 0 && S[pSi] < 32) || S[pSi] >= 127)
 		{
 			counter += _putchar('\\');
 			counter += _putchar('x');
