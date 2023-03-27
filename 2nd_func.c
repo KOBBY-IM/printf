@@ -12,6 +12,11 @@ int print_bin(va_list h)
 	unsigned int num = va_arg(h, unsigned int);
 	int bin[32], total = 0, i = 0;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (num > 0)
 	{
 		bin[i] = (num % 2);

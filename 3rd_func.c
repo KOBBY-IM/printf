@@ -76,3 +76,30 @@ int print_S(va_list h)
 	}
 	return (counter);
 }
+
+/**
+ * print_rev - Prints a string in reverse.
+ * @h: Va_list argument with value needed.
+ *
+ * Return: lenght of string
+ */
+int print_rev(va_list h)
+{
+	int len = 0, i;
+	char *s = va_arg(h, char *);
+
+	while (*s != '\0')
+	{
+		len++;
+		++s;
+	}
+
+	s--;
+
+	for (i = len; i > 0; i--)
+	{
+		_putchar(*s);
+		s--;
+	}
+	return (len);
+}
