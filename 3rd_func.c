@@ -110,3 +110,20 @@ int print_rev(va_list h)
 	}
 	return (len);
 }
+
+/**
+ * print_uil_num - Prints an integar number
+ * @n: Integar number to be printed
+ *
+ * Return: Number integer characters printed to stdout
+ */
+int print_uil_num(uil n)
+{
+	uil num = n, count = 0;
+
+	if (num / 10)
+		count += print_uil_num(num / 10);
+	count += _putchar((num % 10) + '0');
+	return (count);
+}
+

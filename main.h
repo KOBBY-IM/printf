@@ -6,8 +6,15 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+/**
+ * uil - typedef for unsigned long int
+ */
+typedef unsigned long int uil;
+
+
 int _printf(const char *format, ...);
 int _putchar(char c);
+int print_uil_num(uil n);
 int print_num(long int n);
 int print_char(va_list h);
 int print_str(va_list h);
@@ -21,10 +28,6 @@ int print_p(va_list h);
 int print_S(va_list h);
 int print_rev(va_list h);
 
-/**
- * uil - typedef for unsigned long int
- */
-typedef unsigned long int uil;
 
 /**
  * struct check - Holds a character and matching function call

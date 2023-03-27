@@ -39,7 +39,7 @@ int print_unsign(va_list h)
 	unsigned int num = va_arg(h, unsigned int);
 	int total;
 
-	total = print_num((long int) num);
+	total = print_uil_num((uil) num);
 	return (total);
 }
 
