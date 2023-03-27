@@ -9,17 +9,24 @@
  */
 int print_p(va_list h)
 {
-	unsigned int *num = (unsigned int *)va_arg(h, void *);
-	int total = 0, hex[12], i = 0;
+	unsigned long int num = (unsigned long int)va_arg(h, void *);
+	int total = 0, hex[32], i = 0;
 
-	while (*num > 0)
+	total += _putchar('0');
+	total += _putchar('x');
+	if (num == 0)
 	{
-		hex[i] = *num % 16;
+		total += _putchar('0');
+			return (total);
+	}
+	while (num > 0)
+	{
+		hex[i] = num % 16;
 		if (hex[i] < 10)
 			hex[i] += '0';
 		else
 			hex[i] += ('a' - 10);
-		*num /= 16;
+		num /= 16;
 		i++;
 	}
 	for (--i; i >= 0; i--)
