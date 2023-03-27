@@ -37,6 +37,8 @@ int _printf(const char *format, ...)
 				}
 				else if (j == (n - 1))
 				{
+					if (format[i + 1] == '\0')
+						return (-1);
 					counter += _putchar(format[i++]);
 				}
 			}
