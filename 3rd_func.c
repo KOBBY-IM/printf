@@ -10,9 +10,8 @@
 int print_p(va_list h)
 {
 	unsigned int *num = (unsigned int *)va_arg(h, void *);
-	int total = 0, hex[12], i;
+	int total = 0, hex[12], i = 0;
 
-	i = 0;
 	while (*num > 0)
 	{
 		hex[i] = *num % 16;
