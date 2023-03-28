@@ -1,5 +1,7 @@
 Readmt file for printf team project`
 
+Team- Oluwafemi Awodele and Theophilus Nyarko-Mensah
+
 #Requirements
 
 *General*
