@@ -40,7 +40,10 @@ int print_p(va_list h);
 int print_S(va_list h);
 int print_rev(va_list h);
 int print_rot13(va_list h);
-int con_spec(const char *ptr, int *a, fmt specptr[SIZE], va_list point, int m);
+int con_spec(const char *ptr, int *a, fmt specptr[SIZE], va_list point);
 int flag_char(const char *str, va_list point, int *a);
+int print_octal_num(unsigned int n);
+int print_heXa_num(unsigned int n);
+int print_hexa_num(unsigned int n);
 
 #endif

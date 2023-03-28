@@ -28,20 +28,6 @@ int print_bin(va_list h)
 	return (total);
 }
 
-/**
- * print_unsign - Function that prints an unsigned int to stdout
- * @h: va_list argument with value needed
- *
- * Return: The number of unsinged integers printed to stdout
- */
-int print_unsign(va_list h)
-{
-	unsigned int num = va_arg(h, unsigned int);
-	int total;
-
-	total = print_uil_num((uil) num);
-	return (total);
-}
 
 /**
  * print_octal - Function that prints unsigned int in octal(base(8)) to stdout
@@ -52,18 +38,31 @@ int print_unsign(va_list h)
 int print_octal(va_list h)
 {
 	unsigned int num = va_arg(h, unsigned int);
+	int total;
+
+	total = print_octal_num(num);
+	return (total);
+}
+
+/**
+ * print_octal_num - Converts decimal number to octal and prints to stdout
+ * @n: Decimal number
+ *
+ * Return: NUmber of characters printed to stdout
+ */
+int print_octal_num(unsigned int n)
+{
 	int total = 0, oct[32], i = 0;
 
-	if (num == 0)
+	if (n == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-
-	while (num > 0)
+	while (n > 0)
 	{
-		oct[i] = num % 8;
-		num /= 8;
+		oct[i] = n % 8;
+		n /= 8;
 		i++;
 	}
 	for (--i; i >= 0; i--)
@@ -81,58 +80,39 @@ int print_octal(va_list h)
 int print_heXa(va_list h)
 {
 	unsigned int num = va_arg(h, unsigned int);
-	int total = 0, heX[12], i = 0;
+	int total;
 
-	if (num == 0)
-	{
-		_putchar('0');
-		return (1);
-	}
-
-	while (num > 0)
-	{
-		heX[i] = num % 16;
-		if (heX[i] < 10)
-			heX[i] += '0';
-		else
-			heX[i] += ('A' - 10);
-		num /= 16;
-		i++;
-	}
-	for (--i; i >= 0; i--)
-		total += _putchar(heX[i]);
+	total = print_heXa_num(num);
 	return (total);
 }
 
 /**
- * print_hexa - Function that prints unsigned int in hexadecimal(base(16))
- * to stdout
- * @h: va_list argument with value needed
+ * print_heXa_num - Converts decimal to heXadecimal and prints to stdout
+ * @n: Decimal number
  *
- * Return: Number of hexadecimal characters printed to stdout
+ * Return: Number of chracters printed to stdout
  */
-int print_hexa(va_list h)
+int print_heXa_num(unsigned int n)
 {
-	unsigned int num = va_arg(h, unsigned int);
-	int total = 0, hex[12], i = 0;
+	int total = 0, heX[12], i = 0;
 
-	if (num == 0)
+	if (n == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
 
-	while (num > 0)
+	while (n > 0)
 	{
-		hex[i] = num % 16;
-		if (hex[i] < 10)
-			hex[i] += '0';
+		heX[i] = n % 16;
+		if (heX[i] < 10)
+			heX[i] += '0';
 		else
-			hex[i] += ('a' - 10);
-		num /= 16;
+			heX[i] += ('A' - 10);
+		n /= 16;
 		i++;
 	}
 	for (--i; i >= 0; i--)
-		total += _putchar(hex[i]);
+		total += _putchar(heX[i]);
 	return (total);
 }

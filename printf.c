@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list head;
-	int i = 0, counter = 0, n = SIZE, ret;
+	int i = 0, counter = 0, ret;
 	fmt spec[] = {{'c', print_char}, {'s', print_str}, {'i', print_int},
 	{'d', print_int}, {'b', print_bin}, {'u', print_unsign}, {'o', print_octal},
 	{'x', print_hexa}, {'X', print_heXa}, {'p', print_p}, {'S', print_S},
@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 				counter += ret;
 				continue;
 			}
-			ret = con_spec(format, &i, spec, head, n);
+			ret = con_spec(format, &i, spec, head);
 			if (ret == -1)
 				return (-1);
 			counter += ret;
@@ -49,11 +49,11 @@ int _printf(const char *format, ...)
  *
  * Return: NUmber characters printed to stdout
  */
-int con_spec(const char *ptr, int *a, fmt specptr[SIZE], va_list point, int m)
+int con_spec(const char *ptr, int *a, fmt specptr[SIZE], va_list point)
 {
 	int j, count = 0;
 
-	for (j = 0; j < m; j++)
+	for (j = 0; j < SIZE; j++)
 	{
 		if (ptr[*a + 1] == specptr[j].c)
 		{
@@ -61,7 +61,7 @@ int con_spec(const char *ptr, int *a, fmt specptr[SIZE], va_list point, int m)
 			*a += 2;
 			break;
 		}
-		else if (j == (m - 1))
+		else if (j == (SIZE - 1))
 		{
 			if (ptr[*a + 1] == '\0')
 				return (-1);
