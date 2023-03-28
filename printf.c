@@ -45,7 +45,6 @@ int _printf(const char *format, ...)
  * @a: Pointer to format string index
  * @specptr: Array of typedef fmt
  * @point: va_list argument with variable needed
- * @m: Size of specptr array
  *
  * Return: NUmber characters printed to stdout
  */
