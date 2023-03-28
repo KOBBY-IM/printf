@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#define SIZE 13
+#define SIZE 14
 
 /**
  * uil - typedef for unsigned long int
